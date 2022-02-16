@@ -6,10 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money-master</title>
+
+    <!--------------CSS style----------- -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
+
+    <main>
+        <header>
+            <h1 class="heading">Money Saveing App</h1>
+        </header>
+        <div class="container">
+            <div class="img-part">
+                <img src="./images/mone-saveing.jpg" alt="">
+            </div>
+            <div class="calculator-part">
+                <div>
+                    <h3>Your Income</h3>
+                    <p>
+                        Income: <input id="income-tk" type="text">
+                    </p>
+                    <h3>Expenses</h3>
+                    <p>
+                        Food: <input id="food-tk" class="input" type="text">
+                    </p>
+                    <p>
+                        Rent: <input id="rent-tk" class="input" type="text">
+                    </p>
+                    <p>
+                        clothes: <input id="buy-cloths" class="input" type="text">
+                    </p>
+                    <p class="error-msg">❌You must be input a number.</p>
+                </div>
+                <button onclick="calculate()" type="button" class="btn"> Submit </button>
+                <h3>Total Expenses: <span id="total-expenses">5500</span> </h3>
+                <h3>Balance: <span id="balance">4500</span> </h3>
+                <h4 class="error-msg">You have a debt of <span id="debt-balance">0</span> tk</h4>
+                <div>
+                    <p class="">save:
+                        <input id="percentage-rate" type="text">
+                        % <button type="button" onclick="saveMoney()" class="btn">Save</button>
+                    </p>
+                    <h3>Saving Amount: <span id="Saving-display">2000</span></h3>
+                    <h3>Remaining Balance: <span>2500</span> </h3>
+                </div>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
 </body>
 
 </html>
