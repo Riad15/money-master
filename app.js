@@ -43,10 +43,16 @@ function saveMoney() {
 
     const percentage = document.getElementById('percentage-rate');
     const savingDisplay = document.getElementById('Saving-display');
+
     const totalIncome = document.getElementById('income-tk').value;
     const percentageRate = parseInt(percentage.value);
-    console.log(percentageRate);
     const saving = parseInt(totalIncome) * percentageRate / 100;
     savingDisplay.innerText = saving;
-    console.log(saving);
+
+    const RemainingBalance = document.getElementById('Remaining-Balance');
+    const balance = document.getElementById('balance').innerText;
+    const updateRemainingBalance = parseInt(balance) - saving;
+    RemainingBalance.innerText = updateRemainingBalance;
+
+
 }
