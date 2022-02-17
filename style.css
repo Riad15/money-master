@@ -32,12 +32,22 @@ h3{
 }
 p{
     text-align: justify;
+    font-size: 21px;
     font-weight: 600;
+}
+.input-teg{
+    width: 60%;
+    
+}
+#percentage-rate{
+    width: 50px;
 }
 .error-msg{
     background-color:darkseagreen;
     color: beige;
+    font-size: 20px;
     font-weight: 600;
+    padding: 8px;
     display: none;
 }
 .btn{
@@ -49,17 +59,37 @@ p{
     border-radius: 7px;
     color: aliceblue;
 }
-@media only screen and(max-width:620px) {
+/*--------------------mobile screen----------------- */
+@media only screen and (max-width:620px) {
+    .heading{
+        padding-bottom: 0;
+        margin: 0;
+    }
    .container{
        flex-direction: column;
-       justify-content: center;
+       justify-content:center;
    } 
+
    .img-part{
+       width: 90%;
+       height: auto;
+       margin: 0;
+   }
+   .img-part img{
        width: 100%;
-       height: 100%;
+       margin: 0;
+   }
+   h3{
+       margin: 0;
+   }
+   .input-teg{
+       margin: 0;
+   }
+   .save-teg{
+       margin: 0;
    }
    .calculator-part{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: auto;
    }
 }

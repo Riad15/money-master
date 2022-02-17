@@ -19,7 +19,19 @@ function calculate() {
         // ----------display balance after expenses---------
         const balance = totalIncome - totalExpenses;
         if (balance < 0) {
-            const displayBalance = Document.getElementById('debt-balance');
+            // console.log("tumar taka rin ache");
+            const displayBalance = document.getElementById('reaming-msg');
+            const debt = document.getElementById('debt-balance');
+            debt.innerText = balance;
+            // console.log(displayBalance.innerText);
+            displayBalance.style.display = 'block'
+            setTimeout(myFunction, 3000);
+
+            function myFunction() {
+                displayBalance.style.display = 'none';
+            }
+
+
 
 
         } else {
@@ -29,7 +41,13 @@ function calculate() {
 
 
     } else {
-        console.log('bal number dew tmi');
+        const errorMSG = document.getElementById('error-text');
+        errorMSG.style.display = 'block';
+        setTimeout(myFunction, 3000);
+
+        function myFunction() {
+            errorMSG.style.display = 'none';
+        }
     }
 
 
@@ -39,20 +57,31 @@ function calculate() {
     // console.log(Income.value);
 }
 
+
 function saveMoney() {
-
-    const percentage = document.getElementById('percentage-rate');
-    const savingDisplay = document.getElementById('Saving-display');
-
-    const totalIncome = document.getElementById('income-tk').value;
-    const percentageRate = parseInt(percentage.value);
-    const saving = parseInt(totalIncome) * percentageRate / 100;
-    savingDisplay.innerText = saving;
-
-    const RemainingBalance = document.getElementById('Remaining-Balance');
     const balance = document.getElementById('balance').innerText;
-    const updateRemainingBalance = parseInt(balance) - saving;
-    RemainingBalance.innerText = updateRemainingBalance;
+    const balanceCheck = parseInt(balance);
+    if (balanceCheck <= 0) {
+        const savingDisplay = document.getElementById('Saving-display');
+        console.log(savingDisplay);
+        savingDisplay.style.display = 'block';
+    } else {
+        const percentage = document.getElementById('percentage-rate');
+        const savingDisplay = document.getElementById('Saving-display');
+
+        const totalIncome = document.getElementById('income-tk').value;
+        const percentageRate = parseInt(percentage.value);
+        const saving = parseInt(totalIncome) * percentageRate / 100;
+        savingDisplay.innerText = saving;
+
+        const RemainingBalance = document.getElementById('Remaining-Balance');
+
+        const updateRemainingBalance = parseInt(balance) - saving;
+        RemainingBalance.innerText = updateRemainingBalance;
+    }
+
+
+
 
 
 }
